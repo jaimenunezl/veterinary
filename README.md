@@ -15,3 +15,9 @@ Project created to learn React
 - `cd veterinary`
 - `npm install`
 - `npm run start`
+
+## Deploy viewer
+
+When deployed into master branch automatically build into Netlify site.
+
+[Go to Netlify site](veterinary-jaimenunezl.netlify.com "Veterinary")
