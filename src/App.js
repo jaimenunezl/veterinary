@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./bootstrap.min.css";
+import Header from "./components/Header";
+import NewMeeting from "./components/NewMeeting";
+import ListMeeting from "./components/ListMeeting";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { meetings: [] };
+
+  componentDidMount() {
+    const meetingsLS = localStorage.getItem("meetings");
+    if (meetingsLS) {
+      this.setState({ meetings: JSON.parse(meetingsLS) });
+    }
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem("meetings", JSON.stringify(this.state.meetings));
+  }
+
+  addNewMeeting = data => {
+    const meetings = [...this.state.meetings, data];
+    this.setState({ meetings });
+  };
+
+  deleteMeeting = id => {
+    const currentMeetings = [...this.state.meetings];
+    const meetings = currentMeetings.filter(meeting => meeting.id !== id);
+    this.setState({ meetings: meetings });
+  };
+
+  render() {
+    return (
+      <div className="container">
+        <Header title="Administrador de pacientes veterinaria" />
+        <NewMeeting addNewMeeting={this.addNewMeeting} />
+        <ListMeeting
+          meetings={this.state.meetings}
+          deleteMeeting={this.deleteMeeting}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
