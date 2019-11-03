@@ -32,7 +32,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Header title="Administrador de pacientes veterinaria" />
+        <Header title="Veterinary Patient Manager" />
         <NewMeeting addNewMeeting={this.addNewMeeting} />
         <ListMeeting
           meetings={this.state.meetings}

@@ -57,11 +57,11 @@ class NewMeeting extends Component {
     return (
       <div className="row justify-content-center mt-4">
         <div className="card p-2 col-lg-8 col-xs-12">
-          <h5 className="card-title text-center mt-3">Ingrese nueva cita</h5>
+          <h5 className="card-title text-center mt-3">Add new meeting</h5>
           <div className="card-body">
             {error ? (
               <div className="alert alert-danger text-center mt-2" role="alert">
-                Todos los datos son obligatorios
+                All field are required
               </div>
             ) : null}
 

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const ListMeeting = ({ meetings, deleteMeeting }) => {
   const message =
-    Object.keys(meetings).length === 0 ? "No hay citas" : "Listado de citas";
+    Object.keys(meetings).length === 0 ? "No meetings found" : "Meetings";
 
   return (
     <div className="row justify-content-center mt-4">
