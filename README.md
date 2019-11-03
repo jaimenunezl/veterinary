@@ -2,6 +2,8 @@ Veterinary
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fc6dfaaa-334c-4c16-a0df-7732b7deb85a/deploy-status)](https://app.netlify.com/sites/veterinary-jaimenunezl/deploys)
 
+### Project created to learn React
+
 ## Requirement
 
 - node v12.13.0
