@@ -26,7 +26,7 @@ const Meeting = ({ meeting, deleteMeeting }) => (
         className="btn btn-danger"
         onClick={() => deleteMeeting(meeting.id)}
       >
-        Eliminar cita
+        Delete
       </button>
     </div>
   </div>
